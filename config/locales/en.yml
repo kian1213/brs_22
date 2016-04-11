@@ -20,4 +20,15 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  home:
+    index:
+      head_content: Welcome to the Framgia BRS
+      sub_header: This is a Reviewing System for Technical Books in Framgia.
+  layouts:
+    footer:
+      content: Framgia Book Reviewing System
+    header:
+      app_title: Book Reviewing System
+      tablink_login: Log In
+    application:
+      title: Book Reviewing System
