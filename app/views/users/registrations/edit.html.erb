@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h2><%= t ".title" %></h2>
+    <%= form_for(resource, as: resource_name,
+      url: registration_path(resource_name), html: {method: :put}) do |f| %>
+      <%= devise_error_messages! %>
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name, autofocus: true, placeholder: t(".first_name"),
+        class: "form-control" %>
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name, placeholder: t(".last_name"),
+        class: "form-control" %>
+      <%= f.label :email %>
+      <%= f.email_field :email, placeholder: t(".email"), class: "form-control" %>
+      <%= f.label :password %>
+      <i><%= t ".leave_blank_note" %></i>
+      <%= f.password_field :password, autocomplete: "off",
+        placeholder: t(".password"), class: "form-control" %>
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, autocomplete: "off",
+        placeholder: t(".re_enter_password"), class: "form-control" %>
+      <%= f.label :current_password %>
+      <i><%= t ".re_enter_password_note" %></i>
+      <br>
+      <%= f.password_field :current_password, autocomplete: "off",
+        class: "form-control" %>
+      <br>
+      <%= f.file_field :avatar, accept: "image/jpeg,image/gif,image/png" %>
+      <br>
+      <%= f.button :submit, class: "button btn btn-theme-gray btn-block" do %>
+        <i class="fa fa-lock">
+          <%= t ".update" %>
+        </i>
+      <% end %>
+    <% end %>
+  </div>
+</div>

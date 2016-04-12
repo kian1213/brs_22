@@ -32,3 +32,33 @@ en:
       tablink_login: Log In
     application:
       title: Book Reviewing System
+  users:
+    registrations:
+      edit:
+        title: Edit my Account
+        first_name: First Name
+        last_name: Last Name
+        email: Email
+        leave_blank_note: (leave blank if you don't want to change it)
+        password: Password
+        re_enter_password: Re enter Password
+        re_enter_password_note: (we need your current password to confirm your changes)
+        update: Update my Account
+      new:
+        title: Sign up a new Account
+        first_name: First Name
+        last_name: Last Name
+        email: Email
+        password: Password
+        re_enter_password: Re enter Password
+        create: Sign Up
+        old_user: Already have an account?
+        login: Log In
+    sessions:
+      new:
+        title: Log in
+        email: Email
+        password: Password
+        login: Log In
+        new_user: Are you a new User?
+        signup: Sign Up
