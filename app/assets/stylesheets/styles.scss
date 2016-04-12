@@ -93,3 +93,46 @@ footer ul li {
   border-radius: 10px;
   padding-top: 25px;
 }
+
+.sidebar-panel {
+  margin-top: 10px;
+  background-color: rgba(10, 7, 7, 0.50) !important;
+  color: white !important;
+  border-radius: 10px;
+}
+
+.sidebar-panel-title {
+  text-align: center;
+}
+
+.nav-tabs{
+  margin-top:0px;
+}
+
+.nav-sidebar a {
+  min-height:80px;
+  color: #F2DEDE;
+  -webkit-transition: all 0.08s linear;
+  -moz-transition: all 0.08s linear;
+  -o-transition: all 0.08s linear;
+  transition: all 0.08s linear;
+}
+.nav-sidebar .active a {
+  cursor: default;
+  background-color: #95adc2;
+  color: #fff;
+}
+.nav-sidebar .active a:hover {
+  background-color: #ECEDEE;
+}
+.nav-sidebar .text-overflow a,
+.nav-sidebar .text-overflow .media-body {
+  white-space: nowrap;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+
+.index-new-button {
+  margin-right: 20px;
+}
