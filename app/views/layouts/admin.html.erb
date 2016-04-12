@@ -8,10 +8,20 @@
   </head>
   <body>
     <%= render "layouts/header" %>
+    <%= flash_messages %>
     <div class="container">
-      <%= flash_messages %>
-      <%= yield %>
-      <%= render "layouts/footer" %>
+      <div class="row">
+        <div class="col-md-3">
+          <%= render "users/profile" %>
+        </div>
+        <div class="col-md-9">
+          <br>
+          <%= yield %>
+        </div>
+      </div>
+      <div class="row">
+        <%= render "layouts/footer" %>
+      </div>
     </div>
   </body>
 </html>
