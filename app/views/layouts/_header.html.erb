@@ -1,7 +1,11 @@
 <header class="navbar navbar-fixed-top navbar-inverse nav-color">
   <div class="container">
     <nav>
-      <%= link_to t(".app_title"), root_path, id: "logo" %>
+      <% if user_signed_in? && current_user.admin? %>
+        <%= link_to t(".app_title"), admin_root_path, id: "logo" %>
+      <% else %>
+        <%= link_to t(".app_title"), root_path, id: "logo" %>
+      <% end %>
       <ul class ="nav bar navbar-nav pull-right">
         <% if user_signed_in? %>
           <li class="dropdown">

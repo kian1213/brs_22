@@ -35,6 +35,12 @@ en:
       tablink_profile: My Profile
       tablink_setting: Update my Account
       tablink_logout: Logout
+    sidebar:
+      side_title: Menu
+      users: List of Users
+      books: List of Books
+      categories: List of Categories
+      request: List of User Requests
     application:
       title: Book Reviewing System
     admin:
@@ -69,3 +75,15 @@ en:
         login: Log In
         new_user: Are you a new User?
         signup: Sign Up
+  admin:
+    users:
+      index:
+        header_title: List of Users
+        add: Add New
+        avatar: Avatar
+        name: Full Name
+        email: Email Address
+        admin: Admin?
+        edit: Edit
+        delete: Delete
+        confirm: Are you sure you want to delete?
