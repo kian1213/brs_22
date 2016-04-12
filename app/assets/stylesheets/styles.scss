@@ -1,5 +1,8 @@
 body {
   padding-top: 60px;
+  background-image: asset-url("books.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 ul {
@@ -64,4 +67,29 @@ footer ul {
 footer ul li {
   float: left;
   margin-left: 15px;
+}
+
+.nav-color {
+  background-color: rgba(10, 7, 7, 0.50) !important;
+}
+
+.user-forms {
+  background-color: rgba(10, 7, 7, 0.50);
+  padding-bottom: 15px;
+  border-radius: 50px;
+  color: white;
+}
+
+.home-div {
+  background-color: rgba(10, 7, 7, 0.50) !important;
+  color: white !important
+}
+
+.user-panel {
+  margin-top: 20px;
+  text-align: center;
+  background-color: rgba(10, 7, 7, 0.50) !important;
+  color: white !important;
+  border-radius: 10px;
+  padding-top: 25px;
 }

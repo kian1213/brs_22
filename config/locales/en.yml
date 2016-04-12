@@ -24,14 +24,21 @@ en:
     index:
       head_content: Welcome to the Framgia BRS
       sub_header: This is a Reviewing System for Technical Books in Framgia.
+      signup: Sign up now!
   layouts:
     footer:
       content: Framgia Book Reviewing System
     header:
       app_title: Book Reviewing System
       tablink_login: Log In
+      tablink_welcome: Welcome
+      tablink_profile: My Profile
+      tablink_setting: Update my Account
+      tablink_logout: Logout
     application:
       title: Book Reviewing System
+    admin:
+      title: Book Reviewing System -- Admin
   users:
     registrations:
       edit:
