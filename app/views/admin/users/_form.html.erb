@@ -1,0 +1,21 @@
+<%= render "layouts/error_messages", object: f.object %>
+<%= f.label :first_name %>
+<%= f.text_field :first_name, autofocus: true, placeholder: t(".first_name"),
+  class: "form-control" %>
+<%= f.label :last_name %>
+<%= f.text_field :last_name, placeholder: t(".last_name"),
+  class: "form-control" %>
+<%= f.label :email %>
+<%= f.email_field :email, placeholder: t(".email"), class: "form-control" %>
+<%= f.label :password %>
+<%= f.password_field :password, autocomplete: "off",
+  placeholder: t(".password"), class: "form-control" %>
+<%= f.label :password_confirmation %>
+<%= f.password_field :password_confirmation, autocomplete: "off",
+  placeholder: t(".re_enter_password"), class: "form-control" %>
+<br>
+<%= f.label :admin %>
+<%= f.check_box :admin, id: "squaredTwo" %>
+<br>
+<%= f.file_field :avatar, accept: "image/jpeg,image/gif,image/png" %>
+<br>

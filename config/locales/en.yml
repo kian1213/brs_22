@@ -26,6 +26,9 @@ en:
       sub_header: This is a Reviewing System for Technical Books in Framgia.
       signup: Sign up now!
   layouts:
+    error_messages:
+      contains: "This form contains "
+      error: error
     footer:
       content: Framgia Book Reviewing System
     header:
@@ -77,6 +80,12 @@ en:
         signup: Sign Up
   admin:
     users:
+      create:
+        success: User successfully created!
+      update:
+        success: User successfully updated!
+      destroy:
+        success: User successfully deleted!
       index:
         header_title: List of Users
         add: Add New
@@ -86,4 +95,21 @@ en:
         admin: Admin?
         edit: Edit
         delete: Delete
+        actions: Actions
         confirm: Are you sure you want to delete?
+      show:
+        full_name: Full Name
+        email: Email Address
+        admin: Is user an Admin?
+      new:
+        title: Create User
+        create: Create User
+      edit:
+        title: Update User
+        update: Update User
+      form:
+        first_name: First Name
+        last_name: Last Name
+        email: Email
+        password: Password
+        re_enter_password: Re enter Password
