@@ -34,7 +34,9 @@ class Admin::UsersController < ApplicationController
   end
 
   def load_users
-    @users = @users.order sort_column + " " + sort_direction
+    @users = @users.search(params[:search]).
+      order(sort_column + " " + sort_direction).
+      paginate per_page: 5, page: params[:page]
   end
 
   def sort_column

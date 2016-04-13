@@ -88,6 +88,9 @@ en:
         success: User successfully deleted!
       index:
         header_title: List of Users
+        search_placeholder: Search User
+        search_button: Search
+      users:
         add: Add New
         avatar: Avatar
         name: Full Name
