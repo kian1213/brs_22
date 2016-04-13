@@ -24,4 +24,12 @@ class User < ActiveRecord::Base
   def full_name
     [first_name, last_name].join(" ")
   end
+
+  def self.search search
+    if search
+      where("CONCAT_WS(' ', first_name, last_name) LIKE ?", "%#{search}%")
+    else
+      all
+    end
+  end
 end
