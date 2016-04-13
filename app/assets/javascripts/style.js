@@ -13,3 +13,14 @@ $(document).on("ready page:load", function(){
     return false;
   });
 });
+
+function remove_fields(link) {
+  $(link).parent().children('.removable')[0].value = 1;
+  $(link).parent().parent().hide();
+}
+
+function add_fields(link, association, content) {
+  var new_id = new Date().getTime();
+  var regexp = new RegExp("new_" + association, "g");
+  $(".added-field").append(content.replace(regexp, new_id));
+}
