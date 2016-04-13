@@ -1,12 +1,12 @@
-class Admin::UsersController < ApplicationController
+class Admin::CategoriesController < ApplicationController
   load_and_authorize_resource
   helper_method :sort_column, :sort_direction
-  before_action :load_users, only: [:index]
+  before_action :load_categories, only: [:index]
   before_action :authenticate_user!
 
   def create
-    if @user.save
-      redirect_to admin_users_path
+    if @category.save
+      redirect_to admin_categories_path
       flash[:success] = t ".success"
     else
       render :new
@@ -14,8 +14,8 @@ class Admin::UsersController < ApplicationController
   end
 
   def update
-    if @user.update_attributes user_params
-      redirect_to admin_users_path
+    if @category.update_attributes category_params
+      redirect_to admin_categories_path
       flash[:success] = t ".success"
     else
       render :edit
@@ -23,26 +23,25 @@ class Admin::UsersController < ApplicationController
   end
 
   def destroy
-    @user.destroy
+    @category.destroy
     flash[:success] = t ".success"
-    redirect_to admin_users_path
+    redirect_to admin_categories_path
   end
 
   private
-  def user_params
-    params.require(:user).permit :first_name, :last_name, :email, :password,
-      :admin, :avatar
+  def category_params
+    params.require(:category).permit :name, :description
   end
 
-  def load_users
-    @users = @users.search(params[:search]).
+  def load_categories
+    @categories = @categories.search(params[:search]).
       order(sort_column + " " + sort_direction).
       paginate per_page: 5, page: params[:page]
   end
 
   def sort_column
     User.column_names.include?(params[:sort]) ?
-      params[:sort] : "first_name"
+      params[:sort] : "name"
   end
 
   def sort_direction
