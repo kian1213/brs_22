@@ -1,0 +1,20 @@
+<div class="panel panel-success">
+  <div class="panel-heading panel-colors">
+    <h3><%= t ".title" %></h3>
+  </div>
+  <div class="panel-body">
+    <div class="col-md-4">
+      <%= image_tag @user.avatar, size: "200x200" %>
+    </div>
+    <div class="col-md-8">
+      <h4><b><%= t ".full_name" %></b></h4>
+      &nbsp;&nbsp;<%= @user.full_name %>
+      <br>
+      <h4><b><%= t ".email" %></b></h4>
+      &nbsp;&nbsp;<%= @user.email %>
+      <br>
+      <h4><b><%= t ".admin" %></b></h4>
+      &nbsp;&nbsp;<%= @user.admin? %>
+    </div>
+  </div>
+</div>
