@@ -1,0 +1,23 @@
+<%= render "layouts/error_messages", object: f.object %>
+<%= f.label :title %>
+<%= f.text_field :title, autofocus: true, placeholder: t(".title"),
+  class: "form-control" %>
+<%= f.label :author %>
+<%= f.text_field :author, placeholder: t(".author"), class: "form-control" %>
+<%= f.label :category_id, t(".category") %>
+<%= f.collection_select :category_id, @categories, :id, :name,
+  {prompt: t(".select")}, {class: "form-control"} %>
+<%= f.label :published_date %>
+<%= f.date_field :published_date, placeholder: t(".date"), class: "form-control" %>
+<%= f.label :total_page %>
+<%= f.number_field :total_page, placeholder: t(".page"), class: "form-control" %>
+<%= f.fields_for :book_images do |ff| %>
+  <%= ff.label :images %>
+  <%= ff.file_field :images, multiple: true, name: "book_images[image][]" %>
+<% end %>
+<% if params[:controller] == "post" && params[:action] == "edit" %>
+  <% @book.book_images.each do |book_image| %>
+    <%= image_tag book_image.image, size: "150x150" %>
+  <% end %>
+<% end %>
+<br>
