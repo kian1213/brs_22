@@ -1,0 +1,31 @@
+<table class="table table-striped table-advance table-hover pretty">
+  <hr>
+  <thead>
+    <tr>
+      <th><%= sortable "title", t(".title") %></th>
+      <th><%= sortable "author", t(".author") %></th>
+      <th><%= sortable "published_date", t(".date") %></th>
+      <th><%= sortable "total_page", t(".page") %></th>
+      <th><%= t ".actions" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @user_books.each do |user_book| %>
+      <tr>
+        <td><%= link_to user_book.book.title, book_path(user_book.book_id) %></td>
+        <td><%= user_book.book.author %></td>
+        <td><%= datetime user_book.book.published_date %></td>
+        <td><%= user_book.book.total_page %></td>
+        <td>
+          <div class="admin-actions">
+            TODO
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class="paginate">
+  <%= will_paginate @user_books %>
+</div>
+

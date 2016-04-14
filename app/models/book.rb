@@ -1,6 +1,8 @@
 class Book < ActiveRecord::Base
   has_many :book_images
   has_many :reviews
+  has_many :user_books
+  has_many :favorites
   belongs_to :category
 
   validates :title, presence: true

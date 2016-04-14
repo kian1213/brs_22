@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root "home#index"
+  resources :books, only: [:index, :show]
+  resources :user_books
+  resources :favorites
 
   namespace :admin do
     root "users#index"
