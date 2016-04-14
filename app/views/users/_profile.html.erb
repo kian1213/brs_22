@@ -2,7 +2,7 @@
   <div class="col-md-12">
     <div class="user-panel">
       <div class="user-panel-details">
-        <%= image_tag current_user.avatar, size: "150x150" %>
+        <%= cl_image_tag current_user.avatar_url, size: "150x150" %>
         <br>
         <%= current_user.full_name %>
       </div>
