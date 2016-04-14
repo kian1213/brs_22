@@ -1,18 +1,19 @@
+---
 development:
   cloud_name: df8ntqyv5
-  api_key: "491871496983844"
+  api_key: '491871496983844'
   api_secret: 9mAETH7oJfHScFCHdKKK2oEllsA
   enhance_image_tag: true
   static_image_support: false
 production:
   cloud_name: df8ntqyv5
-  api_key: "491871496983844"
+  api_key: '491871496983844'
   api_secret: 9mAETH7oJfHScFCHdKKK2oEllsA
   enhance_image_tag: true
   static_image_support: true
 test:
   cloud_name: df8ntqyv5
-  api_key: "491871496983844"
+  api_key: '491871496983844'
   api_secret: 9mAETH7oJfHScFCHdKKK2oEllsA
   enhance_image_tag: true
   static_image_support: false
