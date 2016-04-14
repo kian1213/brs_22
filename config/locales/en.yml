@@ -27,10 +27,15 @@ en:
     create:
       success: You successfully added the book to your list.
       fail: Something went wrong. Please try again.
+    update:
+      success: You successfully updated your book status
+      fail: Something went wrong. Please try again.
   favorites:
     create:
       success: You successfully added the book to your favorites.
       fail: Something went wrong. Please try again.
+    destroy:
+      success: You successfully remove the book from your favorites.
   books:
     index:
       header_title: Book List
@@ -51,19 +56,21 @@ en:
       author: Author
       date: Date Published
       page: Total Pages
+      status: Status
       actions: Actions
-      listed: Already Added
-      add_to_reading: Add to List
-      add_to_favorites: Add to Favorites
+      not_started: Not started
+      read: Done Reading
+      reading: Reading
+      start_reading: Mark as Reading
+      done_reading: Mark as Read
     favorite_books:
       title: Book Title
       author: Author
       date: Date Published
       page: Total Pages
       actions: Actions
-      listed: Already Added
-      add_to_reading: Add to List
-      add_to_favorites: Add to Favorites
+      remove: Remove from favorites
+      confirm: Are you sure you want to remove?
   home:
     index:
       head_content: Welcome to the Framgia BRS
