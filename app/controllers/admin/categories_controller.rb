@@ -40,7 +40,7 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def sort_column
-    User.column_names.include?(params[:sort]) ?
+    Category.column_names.include?(params[:sort]) ?
       params[:sort] : "name"
   end
 

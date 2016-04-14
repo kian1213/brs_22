@@ -20,6 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  time:
+    formats:
+      short: "%m/%d/%Y"
   home:
     index:
       head_content: Welcome to the Framgia BRS
@@ -149,3 +152,47 @@ en:
       form:
         name: Name
         description: Description
+    books:
+      create:
+        success: Book successfully created!
+      update:
+        success: Book successfully updated!
+      destroy:
+        success: Book successfully deleted!
+      index:
+        header_title: List of Categories
+        search_placeholder: Search Book
+        search_button: Search
+      books:
+        add: Add New
+        title: Book Title
+        author: Author
+        date: Published Date
+        page: Total Pages
+        edit: Edit
+        delete: Delete
+        actions: Actions
+        confirm: Are you sure you want to delete?
+      book_image_field:
+        remove: Remove
+      show:
+        title: Book Title
+        author: Author
+        date: Published Date
+        page: Total Pages
+      new:
+        title: Create Book
+        create: Create Book
+      edit:
+        title: Update Book
+        update: Update Book
+      form:
+        title: Book Title
+        author: Author
+        date: Published Date
+        page: Total Pages
+        category: Category
+        select: Select a category
+        book_images: Book Images
+        add_book_image: Add Image
+        add_new_book_image: Add Image

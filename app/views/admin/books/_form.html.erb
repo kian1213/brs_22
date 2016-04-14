@@ -1,0 +1,27 @@
+<%= render "layouts/error_messages", object: f.object %>
+<%= f.label :title %>
+<%= f.text_field :title, autofocus: true, placeholder: t(".title"),
+  class: "form-control" %>
+<%= f.label :author %>
+<%= f.text_field :author, placeholder: t(".author"), class: "form-control" %>
+<%= f.label :category_id, t(".category") %>
+<%= f.collection_select :category_id, @categories, :id, :name,
+  {prompt: t(".select")}, {class: "form-control"} %>
+<%= f.label :published_date %>
+<%= f.date_field :published_date, placeholder: t(".date"), class: "form-control" %>
+<%= f.label :total_page %>
+<%= f.number_field :total_page, placeholder: t(".page"), class: "form-control" %>
+<%= t ".book_images" %>
+<%= f.fields_for :book_images do |builder| %>
+  <%= render "book_image_fields", f: builder %>
+<% end %>
+<div class="added-field"></div>
+<%= link_to_add_fields t(".add_book_image"), f, :book_images,
+  "btn btn-primary add-remove-answer", t(".add_new_book_image") %>
+<br>
+<% if params[:controller] == "post" && params[:action] == "edit" %>
+  <% @book.book_images.each do |book_image| %>
+    <%= image_tag book_image.image, size: "150x150" %>
+  <% end %>
+<% end %>
+<br>
