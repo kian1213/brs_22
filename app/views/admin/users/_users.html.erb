@@ -18,7 +18,8 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= image_tag user.avatar, size: "50x50" %></td>
+        <td><%= cl_image_tag user.avatar_url, size: "50x50",
+          crop: :thumbnail %></td>
         <td><%= link_to user.full_name, admin_user_path(user) %></td>
         <td><%= user.email %></td>
         <td><%= user.admin %></td>

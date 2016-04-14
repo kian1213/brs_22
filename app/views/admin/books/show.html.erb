@@ -6,7 +6,7 @@
     <div class="row">
       <div class="col-md-12">
         <% @book.book_images.each do |book_image| %>
-          <%= image_tag book_image.image, size: "150x150" %>
+          <%= cl_image_tag book_image.image_url, size: "150x150" %>
         <% end %>
       </div>
     </div>

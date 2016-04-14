@@ -19,6 +19,7 @@ gem "public_activity"
 gem "will_paginate", "3.0.7"
 gem "bootstrap-will_paginate", "0.0.10"
 gem "faker",  "1.4.2"
+gem "cloudinary"
 gem "sdoc", "~> 0.4.0", group: :doc
 
 group :development, :test do
@@ -28,4 +29,9 @@ end
 group :development do
   gem "web-console", "~> 2.0"
   gem "spring"
+end
+
+group :production do
+  gem "pg",             "0.17.1"
+  gem "rails_12factor", "0.0.2"
 end
