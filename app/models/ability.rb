@@ -5,6 +5,7 @@ class Ability
     if user.admin?
       can :manage, :all
     else
+      can :read, Book
     end
   end
 end

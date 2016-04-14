@@ -23,6 +23,47 @@ en:
   time:
     formats:
       short: "%m/%d/%Y"
+  user_books:
+    create:
+      success: You successfully added the book to your list.
+      fail: Something went wrong. Please try again.
+  favorites:
+    create:
+      success: You successfully added the book to your favorites.
+      fail: Something went wrong. Please try again.
+  books:
+    index:
+      header_title: Book List
+      search_placeholder: Search Book
+      search_button: Search
+    books:
+      title: Book Title
+      author: Author
+      date: Date Published
+      page: Total Pages
+      actions: Actions
+      not_started: Not started
+      listed: Already Added
+      add_to_reading: Add to List
+      add_to_favorites: Add to Favorites
+    my_books:
+      title: Book Title
+      author: Author
+      date: Date Published
+      page: Total Pages
+      actions: Actions
+      listed: Already Added
+      add_to_reading: Add to List
+      add_to_favorites: Add to Favorites
+    favorite_books:
+      title: Book Title
+      author: Author
+      date: Date Published
+      page: Total Pages
+      actions: Actions
+      listed: Already Added
+      add_to_reading: Add to List
+      add_to_favorites: Add to Favorites
   home:
     index:
       head_content: Welcome to the Framgia BRS
