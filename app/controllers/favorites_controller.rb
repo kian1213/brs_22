@@ -11,6 +11,13 @@ class FavoritesController < ApplicationController
     end
   end
 
+  def destroy
+    @favorite = Favorite.find params[:id]
+    @favorite.destroy
+    redirect_to books_path
+    flash[:success] = t ".success"
+  end
+
   private
   def favorite_params
     params.require(:favorite).permit :user_id, :book_id

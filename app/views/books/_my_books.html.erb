@@ -6,6 +6,7 @@
       <th><%= sortable "author", t(".author") %></th>
       <th><%= sortable "published_date", t(".date") %></th>
       <th><%= sortable "total_page", t(".page") %></th>
+      <th><%= sortable "status", t(".status") %></th>
       <th><%= t ".actions" %></th>
     </tr>
   </thead>
@@ -16,9 +17,24 @@
         <td><%= user_book.book.author %></td>
         <td><%= datetime user_book.book.published_date %></td>
         <td><%= user_book.book.total_page %></td>
+        <td><%= user_book.status %></td>
         <td>
           <div class="admin-actions">
-            TODO
+            <%= form_for user_book, url: user_book_path(user_book.id),
+              method: :put do |f| %>
+              <%= f.hidden_field :user_id, value: current_user.id %>
+              <%= f.hidden_field :book_id, value: user_book.book.id %>
+              <% if user_book.status == t(".not_started") %>
+                <%= f.hidden_field :status, value: t(".reading") %>
+                <%= f.submit t(".start_reading"), class: "btn btn-warning" %>
+              <% elsif user_book.status == t(".reading") %>
+                <%= f.hidden_field :status, value: t(".read") %>
+                <%= f.submit t(".done_reading"), class: "btn btn-primary" %>
+              <% else %>
+                <%= f.hidden_field :status, value: t(".reading") %>
+                <%= f.submit t(".start_reading"), class: "btn btn-warning" %>
+              <% end %>
+            <% end %>
           </div>
         </td>
       </tr>

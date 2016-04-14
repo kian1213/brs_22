@@ -18,7 +18,9 @@
         <td><%= favorite.book.total_page %></td>
         <td>
           <div class="admin-actions">
-            TODO
+            <%= link_to t(".remove"), favorite_path(favorite),
+              method: :delete, data: {confirm: t(".confirm")},
+              class: "btn btn-danger" %>
           </div>
         </td>
       </tr>
