@@ -173,6 +173,8 @@ en:
         delete: Delete
         actions: Actions
         confirm: Are you sure you want to delete?
+      book_image_field:
+        remove: Remove
       show:
         title: Book Title
         author: Author
@@ -191,3 +193,6 @@ en:
         page: Total Pages
         category: Category
         select: Select a category
+        book_images: Book Images
+        add_book_image: Add Image
+        add_new_book_image: Add Image

@@ -11,10 +11,14 @@
 <%= f.date_field :published_date, placeholder: t(".date"), class: "form-control" %>
 <%= f.label :total_page %>
 <%= f.number_field :total_page, placeholder: t(".page"), class: "form-control" %>
-<%= f.fields_for :book_images do |ff| %>
-  <%= ff.label :images %>
-  <%= ff.file_field :images, multiple: true, name: "book_images[image][]" %>
+<%= t ".book_images" %>
+<%= f.fields_for :book_images do |builder| %>
+  <%= render "book_image_fields", f: builder %>
 <% end %>
+<div class="added-field"></div>
+<%= link_to_add_fields t(".add_book_image"), f, :book_images,
+  "btn btn-primary add-remove-answer", t(".add_new_book_image") %>
+<br>
 <% if params[:controller] == "post" && params[:action] == "edit" %>
   <% @book.book_images.each do |book_image| %>
     <%= image_tag book_image.image, size: "150x150" %>

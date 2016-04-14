@@ -7,11 +7,7 @@ class Admin::BooksController < ApplicationController
   before_action :build_book_images, only: [:new]
 
   def create
-    if @book.save
-      params[:book_images][:image].each do |image|
-        @book_images = @book.book_images.
-          create!(image: image, book_id: @book.id)
-      end
+    if @book.save book_params
       redirect_to admin_books_path
       flash[:success] = t ".success"
     else
