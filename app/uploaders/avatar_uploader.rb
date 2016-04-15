@@ -2,7 +2,6 @@ class AvatarUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
   include Cloudinary::CarrierWave
 
-  process tags: ["photo_album_sample"]
   process convert: "jpg"
 
   version :thumbnail do

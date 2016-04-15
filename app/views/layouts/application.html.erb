@@ -10,8 +10,26 @@
     <%= render "layouts/header" %>
     <div class="container">
       <%= flash_messages %>
-      <%= yield %>
-      <%= render "layouts/footer" %>
+      <div class="row">
+        <% if user_signed_in? %>
+          <div class="col-md-3">
+            <%= render "users/profile" %>
+            <%= render "layouts/sidebar" %>
+          </div>
+          <div class="col-md-9">
+            <br>
+            <%= yield %>
+          </div>
+        <% else %>
+          <div class="col-md-12">
+            <br>
+            <%= yield %>
+          </div>
+        <% end %>
+      </div>
+      <div class="row">
+        <%= render "layouts/footer" %>
+      </div>
     </div>
   </body>
 </html>
