@@ -1,11 +1,32 @@
+<% @user ||= current_user %>
 <div class="row">
   <div class="col-md-12">
     <div class="user-panel">
       <div class="user-panel-details">
-        <%= cl_image_tag current_user.avatar_url, size: "150x150" %>
+        <%= cl_image_tag @user.avatar_url, size: "150x150" %>
         <br>
-        <%= current_user.full_name %>
+        <%= @user.full_name %>
       </div>
     </div>
   </div>
 </div>
+<% if !@user.admin? %>
+  <div class="row follow-link">
+    <a href="<%= relationships_path @user,
+      type: 'following', id: @user.id %>",
+      class="btn btn-success">
+      <strong id="following" class="stat">
+        <%= @user.following.count %>
+      </strong>
+      <%= t ".following" %>
+    </a>
+    <a href="<%= relationships_path @user,
+      type: 'followers', id: @user.id %>",
+      class="btn btn-info">
+      <strong id="followers" class="stat">
+        <%= @user.followers.count %>
+      </strong>
+      <%= t ".followers" %>
+    </a>
+  </div>
+<% end %>

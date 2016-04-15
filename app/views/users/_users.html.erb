@@ -1,0 +1,40 @@
+<table class="table table-striped table-advance table-hover pretty">
+  <hr>
+  <thead>
+    <tr>
+      <th><%= t ".avatar" %></th>
+      <th><%= sortable "first_name", t(".name") %></th>
+      <th><%= sortable "email", t(".email") %></th>
+      <th><%= t ".actions" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= cl_image_tag user.avatar_url, size: "50x50",
+          crop: :thumbnail %></td>
+        <td><%= link_to user.full_name, user_path(user) %></td>
+        <td><%= user.email %></td>
+        <td>
+          <div class="admin-actions">
+            <% if current_user.is_not_self? user %>
+              <% if current_user.following? user %>
+                <%= link_to t(".unfollow"), relationship_path(user.id),
+                  method: :delete, class: "btn btn-danger" %>
+              <% else %>
+                <%=  form_for current_user.active_relationships.new,
+                  url: relationships_path, method: :post do |f| %>
+                  <%= hidden_field_tag :followed_id, user.id %>
+                  <%= f.submit t(".follow"), class: "btn btn-success" %>
+                <% end %>
+              <% end %>
+            <% end %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class="paginate">
+  <%= will_paginate @users %>
+</div>

@@ -39,6 +39,9 @@ en:
   books:
     index:
       header_title: Book List
+      books_list: Books List
+      my_books: My Books
+      favorites: Favorites
       search_placeholder: Search Book
       search_button: Search
     books:
@@ -129,6 +132,29 @@ en:
         login: Log In
         new_user: Are you a new User?
         signup: Sign Up
+    index:
+      header_title: Users
+      users_list: Users List
+      following: "Following  "
+      followers: "Followers  "
+      search_placeholder: Search User
+      search_button: Search
+    users:
+      avatar: Avatar
+      name: Full Name
+      email: Email Address
+      actions: Actions
+      follow: Follow
+      unfollow: Unfollow
+    show_follow:
+      header_title: Users
+      search_placeholder: Search User
+      search_button: Search
+    show:
+      title: User Details
+      full_name: Full Name
+      email: Email Address
+      admin: Is user an Admin?
   admin:
     users:
       create:

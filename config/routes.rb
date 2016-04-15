@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   resources :books, only: [:index, :show]
   resources :user_books
   resources :favorites
+  resources :users
+  resources :relationships
 
   namespace :admin do
     root "users#index"

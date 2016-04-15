@@ -6,6 +6,7 @@ class Ability
       can :manage, :all
     else
       can :read, Book
+      can :read, User
     end
   end
 end
