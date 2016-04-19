@@ -1,0 +1,45 @@
+<div class="panel panel-success">
+  <div class="panel-heading panel-colors">
+    <h3><%= t ".header_title" %></h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-12">
+        <% @review.book.book_images.each do |book_image| %>
+          <%= cl_image_tag book_image.image_url, size: "150x150" %>
+        <% end %>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-6">
+        <h4><b><%= t ".title" %></b></h4>
+        &nbsp;&nbsp;<%= @review.book.title %>
+        <br>
+        <h4><b><%= t ".author" %></b></h4>
+        &nbsp;&nbsp;<%= @review.book.author %>
+      </div>
+      <div class="col-md-6">
+        <h4><b><%= t ".date" %></b></h4>
+        &nbsp;&nbsp;<%= datetime @review.book.published_date %>
+        <br>
+        <h4><b><%= t ".page" %></b></h4>
+        &nbsp;&nbsp;<%= @review.book.total_page %>
+      </div>
+    </div>
+    <div class="row user-review">
+      <h2><b><%= t ".review" %></b></h2>
+      <b><%= t ".rate" %></b>
+      <%= @review.rate %>&nbsp;&nbsp;
+      <small><%= @rate_descriptions[@review.rate - 1] %></small>
+      <br><br>
+      <p>
+        <%= @review.content %>
+      </p>
+    </div>
+    <div class="row user-review">
+      <h2><b><%= t ".comment" %></b></h2>
+
+    </div>
+  </div>
+</div>

@@ -1,3 +1,4 @@
+
 Rails.application.routes.draw do
   devise_for :users, controllers: {registrations: "registrations"}
   # The priority is based upon order of creation: first created -> highest priority.
@@ -8,14 +9,18 @@ Rails.application.routes.draw do
   resources :books, only: [:index, :show]
   resources :user_books
   resources :favorites
-  resources :users
   resources :relationships
+  resources :users do
+    resources :reviews
+    resources :requests
+  end
 
   namespace :admin do
     root "users#index"
     resources :users
     resources :categories
     resources :books
+    resources :requests
   end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
