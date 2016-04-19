@@ -17,7 +17,7 @@
               <%= link_to t(".books"), admin_books_path %>
             </li>
             <li>
-              <%= link_to t(".request"), "#" %>
+              <%= link_to t(".request"), admin_requests_path %>
             </li>
           <% else %>
             <li>
@@ -27,7 +27,12 @@
               <%= link_to t(".users"), users_path %>
             </li>
             <li>
-              <%= link_to t(".request"), "#" %>
+              <%= link_to t(".my_request"),
+                user_requests_path(current_user.id) %>
+            </li>
+            <li>
+              <%= link_to t(".my_reviews"),
+                user_reviews_path(current_user.id) %>
             </li>
           <% end %>
         </ul>
