@@ -1,3 +1,4 @@
+
 # Files in the config/locales directory are used for internationalization
 # and are automatically loaded by Rails. If you want to use locales other
 # than English, add the necessary files in this directory.
@@ -44,6 +45,12 @@ en:
       favorites: Favorites
       search_placeholder: Search Book
       search_button: Search
+    show:
+      create: Create an Review for this Book
+      title: Book Title
+      author: Author
+      date: Date Published
+      page: Total Pages
     books:
       title: Book Title
       author: Author
@@ -98,10 +105,84 @@ en:
       books: List of Books
       categories: List of Categories
       request: List of User Requests
+      my_reviews: My Reviews
+      my_request: My Requests
     application:
       title: Book Reviewing System
     admin:
       title: Book Reviewing System -- Admin
+  requests:
+    create:
+      success: Request successfully created
+    update:
+      success: Request successfully updated
+    destroy:
+      success: Request successfully deleted
+    index:
+      header_title: My Requests
+      search_placeholder: Search Request
+      search_button: Search
+    requests:
+      add: Add
+      title: Book Title
+      author: Book Author
+      url: URL
+      status: Request Status
+      actions: Actions
+      edit: Edit
+      confirm: Are you sure?
+      delete: Delete
+    new:
+      title: Create a Request
+      create: Create
+    edit:
+      title: Create a Request
+      update: Update
+    form:
+      title: Book Title
+      author: Book Author
+      url: Site URL
+      pending: Pending
+  reviews:
+    create:
+      success: You successfully created a Review.
+    update:
+      success: You successfully updated a Review.
+    destroy:
+      success: You deleted a Review.
+    index:
+      header_title: My Reviews
+      book: Book Title
+      content: Review Content
+      rate: Rate
+      actions: Action
+      edit: Edit
+      delete: Delete
+      confirm: Are you sure?
+    show:
+      header_title: Book Review
+      title: Book Title
+      author: Author
+      date: Date Published
+      page: Total Pages
+      review: Review
+      rate: "User's rating: "
+      comment: Comments
+    new:
+      title: Create a Review
+      create: Create Review
+    edit:
+      title: Create a Review
+      update: Update Review
+    form:
+      content: Type your review here...
+      user_review: User Review
+      rate: Rate this Book!
+    book_info:
+      title: Book Title
+      author: Author
+      date: Date Published
+      page: Total Pages
   users:
     registrations:
       edit:
@@ -270,3 +351,37 @@ en:
         book_images: Book Images
         add_book_image: Add Image
         add_new_book_image: Add Image
+    requests:
+      create:
+        success: Request successfully created
+      update:
+        success: Request successfully updated
+      destroy:
+        success: Request successfully deleted
+      index:
+        header_title: My Requests
+        search_placeholder: Search Request
+        search_button: Search
+      requests:
+        add: Add
+        title: Book Title
+        author: Book Author
+        url: URL
+        status: Request Status
+        actions: Actions
+        edit: Edit
+        confirm: Are you sure?
+        delete: Delete
+        approved: Approved
+        pending: Pending
+      new:
+        title: Create a Request
+        create: Create
+      edit:
+        title: Create a Request
+        update: Update
+      form:
+        title: Book Title
+        author: Book Author
+        url: Site URL
+        pending: Pending
