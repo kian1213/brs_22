@@ -1,0 +1,12 @@
+<%= render "layouts/error_messages", object: f.object %>
+<%= f.label :book_title %>
+<%= f.text_field :book_title, autofocus: true, placeholder: t(".title"),
+  class: "form-control" %>
+<%= f.label :book_author %>
+<%= f.text_field :book_author, placeholder: t(".author"),
+  class: "form-control" %>
+<%= f.label :url %>
+<%= f.text_field :url, placeholder: t(".url"),
+  class: "form-control" %>
+<%= f.hidden_field :user_id, value: current_user.id %>
+<br>
