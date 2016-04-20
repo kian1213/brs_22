@@ -39,7 +39,16 @@
     </div>
     <div class="row user-review">
       <h2><b><%= t ".comment" %></b></h2>
-
+        <div id="comments_list">
+          <%= render "comments"%>
+        </div>
+        <%= form_for Comment.new, url: user_review_comments_path(@review.user, @review),
+          method: :post do |f| %>
+          <%= f.label :content, "Post Comment" %>
+          <%= f.text_area :content, class: "form-control" %>
+          <br>
+          <%= f.submit class: "btn btn-primary" %>
+        <% end %>
     </div>
   </div>
 </div>
