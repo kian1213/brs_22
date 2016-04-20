@@ -1,0 +1,22 @@
+<div class="panel panel-success">
+  <div class="panel-heading panel-colors">
+    <h3><%= t ".header_title" %></h3>
+  </div>
+  <div class="tab-content">
+    <div id="users_index" class="tab-pane fade in active">
+      <div class="search-form">
+        <%= form_tag users_path, method: "get",
+          id: "form_search" do %>
+          <p>
+            <%= text_field_tag :search,
+              params[:search], placeholder: t(".search_placeholder") %>
+            <%= submit_tag t(".search_button"), class: "btn btn-warning btn-sm" %>
+          </p>
+        <% end %>
+      </div>
+      <div id="index-list">
+        <%= render "users" %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,4 @@
+development:
+  rate_descriptions:
+    list: {"1": "Very Bad", "2": "Bad", "3": "Good",
+        "4": "Very Good!", "5": "Excellent!"}
