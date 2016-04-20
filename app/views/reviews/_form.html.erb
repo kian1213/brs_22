@@ -4,7 +4,7 @@
 <%= f.label :rate, t(".rate") %>
 <br>
 <% @rate_descriptions.reverse_each do |rate, rate_description| %>
-  <%= f.radio_button :rate, rate.to_i %>
+  <%= f.radio_button :rate, rate.to_s.to_i %>
   <%= rate_description %>
 <% end %>
 <br><br>
