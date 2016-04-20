@@ -38,7 +38,8 @@ class ReviewsController < ApplicationController
   end
 
   def set_rate_descriptions
-    @rate_descriptions = APP_CONFIG[:rate_descriptions][:list].to_h
+    @rate_descriptions = {"1": "Very Bad", "2": "Bad", "3": "Good",
+        "4": "Very Good!", "5": "Excellent!"}
   end
 
   def load_reviews
