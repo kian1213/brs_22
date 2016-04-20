@@ -45,7 +45,7 @@ class User < ActiveRecord::Base
     following.include? other_user
   end
 
-  def is_not_self? user
-    self != user
+  def is_self? user
+    self == user
   end
 end

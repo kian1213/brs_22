@@ -2,6 +2,7 @@ class BooksController < ApplicationController
   load_and_authorize_resource
   helper_method :sort_column, :sort_direction
   before_action :load_books, only: [:index]
+  before_action :load_reviews, only: [:show]
   before_action :authenticate_user!
   before_action :load_list_and_favorite_books
 
@@ -10,6 +11,10 @@ class BooksController < ApplicationController
     @books = @books.search(params[:search]).
       order(sort_column + " " + sort_direction).
       paginate per_page: 5, page: params[:page]
+  end
+
+  def load_reviews
+    @reviews = @book.reviews
   end
 
   def sort_column

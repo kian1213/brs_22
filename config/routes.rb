@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   resources :favorites
   resources :relationships
   resources :users do
-    resources :reviews
+    resources :reviews do
+      resources :comments
+    end
     resources :requests
   end
 

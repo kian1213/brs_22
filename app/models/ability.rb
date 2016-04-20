@@ -7,6 +7,7 @@ class Ability
     else
       can :manage, Review
       can :manage, Request
+      can :manage, Comment
       can :read, Book
       can :read, User
     end
