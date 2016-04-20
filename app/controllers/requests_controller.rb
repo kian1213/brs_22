@@ -1,21 +1,11 @@
 class RequestsController < ApplicationController
   before_action :authenticate_user!
+  load_and_authorize_resource
+  before_action :load_requests, only: [:index]
   helper_method :sort_column, :sort_direction
 
-  def index
-    @requests = current_user.requests.search(params[:search]).
-      order(sort_column + " " + sort_direction).
-      paginate per_page: 5, page: params[:page]
-  end
-
-  def new
-    @request = Request.new
-  end
-
   def create
-    @request = Request.new request_params
-
-    if @request.save
+    if @request.save request_params
       flash[:success] = t ".success"
       redirect_to user_requests_path
     else
@@ -23,13 +13,7 @@ class RequestsController < ApplicationController
     end
   end
 
-  def edit
-    @request = Request.find params[:id]
-  end
-
   def update
-    @request = Request.find params[:id]
-
     if @request.update_attributes request_params
       flash[:success] = t ".success"
       redirect_to user_requests_path
@@ -50,6 +34,12 @@ class RequestsController < ApplicationController
   def request_params
     params.require(:request).permit :user_id, :book_title, :book_author,
       :url, :status
+  end
+
+  def load_requests
+    @requests = @requests.search(params[:search]).
+      order(sort_column + " " + sort_direction).
+      paginate per_page: 5, page: params[:page]
   end
 
   def sort_column
