@@ -27,4 +27,3 @@ config/environments/*.local.yml
 /.idea
 
 # Ignore application configuration
-/config/application.yml
