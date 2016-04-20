@@ -370,6 +370,7 @@ en:
         status: Request Status
         actions: Actions
         edit: Edit
+        request_by: Request By
         confirm: Are you sure?
         delete: Delete
         approved: Approved
