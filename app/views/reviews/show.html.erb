@@ -42,18 +42,7 @@
         <div id="comments_list">
           <%= render "comments"%>
         </div>
-        <div id="comment_form">
-          <%= form_for Comment.new, url: user_review_comments_path(@review.user, @review),
-            method: :post,remote: true do |f| %>
-            <%= f.hidden_field :user_id, value: @review.user.id %>
-            <%= f.hidden_field :review_id, value: @review.id %>
-            <%= f.label :content, t(".post_comment") %>
-            <%= f.text_area :content, class: "form-control",
-              id: "comment-text-area", rows: 5 %>
-            <br>
-            <%= f.submit class: "btn btn-primary" %>
-          <% end %>
-        </div>
+        <%= render "form_create" %>
     </div>
   </div>
 </div>

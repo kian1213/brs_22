@@ -188,8 +188,11 @@ en:
       edit: Edit
       delete: Delete
       confirm: Are you sure?
-    form_edit:
+    form_create:
       post_comment: Post Comment
+    form_edit:
+      edit_comment: Edit Comment
+      cancel: Cancel
   users:
     registrations:
       edit:
