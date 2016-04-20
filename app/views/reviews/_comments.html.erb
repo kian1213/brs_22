@@ -1,0 +1,22 @@
+<% @review.comments.each do |comment| %>
+  <div class="row comment-area">
+    <div class="col-md-2 comment-image">
+      <%= cl_image_tag comment.user.avatar_url, size: "80x80",
+        crop: :thumbnail %>
+      <br>
+      <%= comment.user.full_name %>
+      <br>
+      <% if current_user.is_self? comment.user %>
+        <%= link_to t(".edit"), edit_user_review_comment_path(comment.user,
+          @review, comment), remote: true, class: "btn btn-xs btn-success" %>
+        <%= link_to t(".delete"), user_review_comment_path(comment.user,
+          @review, comment), method: :delete, data: {confirm: t(".confirm")},
+          remote: true, class: "btn btn-xs btn-danger" %>
+      <% end %>
+    </div>
+    <div class="col-md-10">
+      <i><%= comment.content %></i>
+    </div>
+  </div>
+  <br>
+<% end %>

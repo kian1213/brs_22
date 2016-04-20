@@ -51,6 +51,7 @@ en:
       author: Author
       date: Date Published
       page: Total Pages
+      review_list: User Reviews
     books:
       title: Book Title
       author: Author
@@ -183,6 +184,12 @@ en:
       author: Author
       date: Date Published
       page: Total Pages
+    comments:
+      edit: Edit
+      delete: Delete
+      confirm: Are you sure?
+    form_edit:
+      post_comment: Post Comment
   users:
     registrations:
       edit:

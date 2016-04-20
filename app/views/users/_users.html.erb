@@ -17,7 +17,7 @@
         <td><%= user.email %></td>
         <td>
           <div class="admin-actions">
-            <% if current_user.is_not_self? user %>
+            <% if !current_user.is_self? user %>
               <% if current_user.following? user %>
                 <%= link_to t(".unfollow"), relationship_path(user.id),
                   method: :delete, class: "btn btn-danger" %>
