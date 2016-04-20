@@ -2,7 +2,7 @@
   <%= form_for @comment,
     url: user_review_comment_path(@comment.user, @comment.review, @comment),
     method: :put,remote: true do |f| %>
-    <%= f.hidden_field :user_id, value: @comment.user.id %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
     <%= f.hidden_field :review_id, value: @comment.review.id %>
     <%= f.label :content, t(".edit_comment") %>
     <%= f.text_area :content, class: "form-control edit-area",
