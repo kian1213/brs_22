@@ -1,40 +1,24 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!
+  load_and_authorize_resource
   before_action :set_rate_descriptions
-  before_action :get_book, only: [:new, :edit]
-
-  def index
-    @reviews = current_user.reviews.paginate per_page: 5, page: params[:page]
-  end
-
-  def show
-    @review = Review.find params[:id]
-  end
-
-  def new
-    @review = Review.new
-  end
+  before_action :load_reviews, only: [:index]
+  before_action :load_book, only: [:new, :edit]
 
   def create
-    @review = Review.new review_params
-
-    if @review.save
-      redirect_to books_path
+    if @review.save review_params
+      redirect_to user_reviews_path(current_user)
       flash[:success] = t ".success"
     else
       render :new
     end
   end
 
-  def edit
-    @review = Review.find params[:id]
-  end
-
   def update
     @review = Review.find params[:id]
 
     if @review.update_attributes review_params
-      redirect_to books_path
+      redirect_to user_reviews_path(current_user)
       flash[:success] = t ".success"
     else
       render :edit
@@ -54,15 +38,20 @@ class ReviewsController < ApplicationController
   end
 
   def set_rate_descriptions
-    @rate_descriptions = ["Very Bad", "Bad", "Good", "Very Good!", "Excellent!"]
+    @rate_descriptions = APP_CONFIG[:rate_descriptions][:list].to_h
   end
 
-  def get_book
+  def load_reviews
+    @reviews = current_user.reviews.paginate per_page: 5, page: params[:page]
+  end
+
+  def load_book
     if params[:action] == "new"
       @book = Book.find params[:book_id]
     else
       review = Review.find params[:id]
       @book = Book.find review.book.id
+      params[:book_id] = @book.id
     end
   end
 end

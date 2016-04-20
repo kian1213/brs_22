@@ -5,7 +5,8 @@ require "carrierwave/orm/activerecord"
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
-
+APP_CONFIG = YAML.load_file("config/application.yml")[Rails.env].
+    with_indifferent_access
 module BaseApp
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.

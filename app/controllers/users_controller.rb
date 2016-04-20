@@ -10,13 +10,6 @@ class UsersController < ApplicationController
       order(sort_column + " " + sort_direction).
       paginate per_page: 5, page: params[:page]
 
-    @following = current_user.following.search(params[:search]).
-      order(sort_column + " " + sort_direction).
-      paginate per_page: 5, page: params[:page]
-
-    @followers = current_user.followers.search(params[:search]).
-      order(sort_column + " " + sort_direction).
-      paginate per_page: 5, page: params[:page]
   end
 
   def sort_column

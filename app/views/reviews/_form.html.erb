@@ -3,9 +3,9 @@
 <%= f.hidden_field :book_id, value: params[:book_id] %>
 <%= f.label :rate, t(".rate") %>
 <br>
-<% (1..5).to_a.reverse_each do |rate| %>
+<% @rate_descriptions.reverse_each do |rate, rate_description| %>
   <%= f.radio_button :rate, rate.to_i %>
-  <%= @rate_descriptions[rate.to_i - 1] %>
+  <%= rate_description %>
 <% end %>
 <br><br>
 <%= f.label :content, t(".user_review") %>

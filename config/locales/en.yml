@@ -227,20 +227,15 @@ en:
       actions: Actions
       follow: Follow
       unfollow: Unfollow
-    following:
-      avatar: Avatar
-      name: Full Name
+    show_follow:
+      header_title: Users
+      search_placeholder: Search User
+      search_button: Search
+    show:
+      title: User Details
+      full_name: Full Name
       email: Email Address
-      actions: Actions
-      follow: Follow
-      unfollow: Unfollow
-    followers:
-      avatar: Avatar
-      name: Full Name
-      email: Email Address
-      actions: Actions
-      follow: Follow
-      unfollow: Unfollow
+      admin: Is user an Admin?
   admin:
     users:
       create:
