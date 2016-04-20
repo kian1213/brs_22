@@ -1,11 +1,12 @@
 class Request < ActiveRecord::Base
   belongs_to :user
 
+  enum status: {"Approved": true, "Pending": false}
+
   validates :book_title, presence: true
   validates :book_author, presence: true
   validates :url, presence: true
-
-  enum status: {"Approved": true, "Pending": false}
+  validates :status, inclusion: {in: statuses.keys}
 
   def self.search search
     if search

@@ -1,7 +1,7 @@
 class RequestsController < ApplicationController
   before_action :authenticate_user!
   load_and_authorize_resource
-  before_action :load_requests, only: [:index]
+  before_action :load_requests
   helper_method :sort_column, :sort_direction
 
   def create
@@ -37,7 +37,7 @@ class RequestsController < ApplicationController
   end
 
   def load_requests
-    @requests = @requests.search(params[:search]).
+    @requests = current_user.requests.search(params[:search]).
       order(sort_column + " " + sort_direction).
       paginate per_page: 5, page: params[:page]
   end
