@@ -1,5 +1,4 @@
 class ReviewsController < ApplicationController
-  before_action :authenticate_user!
   load_and_authorize_resource
   before_action :set_rate_descriptions
   before_action :load_reviews, only: [:index]

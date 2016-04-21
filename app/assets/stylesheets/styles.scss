@@ -190,3 +190,20 @@ footer ul li {
 .edit-area {
   background-color: #DCF0FA !important;
 }
+
+.book-image {
+  background-image: asset-url("bg_product.png");
+  background-repeat: no-repeat;
+  float: left;
+  width: 148px;
+  margin-right: 10px;
+  position: relative;
+  padding-top: 4px;
+  margin-bottom: 20px;
+}
+
+.btn-title {
+  margin-top: 5px;
+  height: 20px !important;
+  text-align: center !important;
+}

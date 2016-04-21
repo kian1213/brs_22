@@ -3,7 +3,6 @@ class BooksController < ApplicationController
   helper_method :sort_column, :sort_direction
   before_action :load_books, only: [:index]
   before_action :load_reviews, only: [:show]
-  before_action :authenticate_user!
   before_action :load_list_and_favorite_books
 
   private
@@ -28,9 +27,11 @@ class BooksController < ApplicationController
   end
 
   def load_list_and_favorite_books
-    @user_books = current_user.user_books.
-      paginate per_page: 5, page: params[:page]
-    @favorites = current_user.favorites.
-      paginate per_page: 5, page: params[:page]
+    if user_signed_in?
+      @user_books = current_user.user_books.
+        paginate per_page: 5, page: params[:page]
+      @favorites = current_user.favorites.
+        paginate per_page: 5, page: params[:page]
+    end
   end
 end

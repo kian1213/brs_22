@@ -1,12 +1,59 @@
 <% if user_signed_in? %>
 
 <% else %>
-  <div class="center jumbotron home-div">
-    <h1><%= t ".head_content" %></h1>
-    <h2>
-      <%= t ".sub_header" %>
-    </h2>
-    <%= link_to t(".signup"), new_user_registration_path,
-      class: "btn btn-lg btn-primary" %>
+  <div class="row">
+    <div class="center jumbotron home-div">
+      <h1><%= t ".head_content" %></h1>
+      <h3>
+        <%= t ".sub_header" %>
+      </h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 home-div">
+      <h2><%= t ".recent" %></h2>
+      <div class="carousel carousel-showmanymoveone slide" id="carousel-books">
+        <div class="carousel-inner">
+          <% @books.last(10).each_with_index do |book, index| %>
+            <div class="item <%= index == 0 ? "active" : "" %>">
+              <div class="col-xs-3">
+                <div class="book-image">
+                  <%= link_to cl_image_tag(book.book_images.first.image),
+                    book_path(book), class: "img-responsive" %>
+                  <%= link_to book.title, book_path(book),
+                    class: "btn btn-xs btn-info form-control btn-title" %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <a class="left carousel-control" href="#carousel-books" data-slide="prev">
+          <i class="glyphicon glyphicon-chevron-left"></i>
+        </a>
+        <a class="right carousel-control" href="#carousel-books" data-slide="next">
+          <i class="glyphicon glyphicon-chevron-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <br><br>
+  <div class="row">
+    <div class="col-md-12 home-div">
+      <h2><%= t ".books" %></h2>
+      <% @books.in_groups_of(4) do |group| %>
+        <% group.each do |book| %>
+          <% if book %>
+            <div class="col-xs-3">
+              <div class="book-image">
+                <%= link_to cl_image_tag(book.book_images.first.image),
+                  book_path(book), class: "img-responsive" %>
+                <%= link_to book.title, book_path(book),
+                  class: "btn btn-xs btn-info form-control btn-title" %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 <% end %>
