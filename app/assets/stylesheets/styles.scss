@@ -207,3 +207,21 @@ footer ul li {
   height: 20px !important;
   text-align: center !important;
 }
+
+.activity {
+  border-bottom: solid 1px #CCC;
+  padding: 16px 0;
+  em {
+    color: #777;
+    font-size: 12px;
+    padding-left: 5px;
+  }
+}
+
+.time-ago {
+  color: cornflowerblue;
+}
+
+.activity-list {
+  margin-left: 50px;
+}

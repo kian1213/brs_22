@@ -93,6 +93,7 @@ en:
       sub_header: This is a Reviewing System for Technical Books in Framgia.
       recent: Newly added books
       books: Books List
+      header_title: My Activities
   layouts:
     error_messages:
       contains: "This form contains "
@@ -119,6 +120,12 @@ en:
       title: Book Reviewing System
     admin:
       title: Book Reviewing System -- Admin
+  public_activity:
+    user:
+      create:
+        followed: Followed
+        ago: ago
+        removed: a user which has been removed.
   requests:
     create:
       success: Request successfully created
