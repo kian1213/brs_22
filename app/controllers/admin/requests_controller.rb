@@ -5,9 +5,7 @@ class Admin::RequestsController < ApplicationController
   before_action :load_requests, only: [:index]
 
   def create
-    @request = Request.new request_params
-
-    if @request.save
+    if @request.save request_params
       flash[:success] = t ".success"
       redirect_to admin_requests_path
     else
@@ -16,8 +14,6 @@ class Admin::RequestsController < ApplicationController
   end
 
   def update
-    @request = Request.find params[:id]
-
     if @request.update_attributes request_params
       flash[:success] = t ".success"
       redirect_to admin_requests_path
@@ -34,7 +30,6 @@ class Admin::RequestsController < ApplicationController
   end
 
   private
-
   def request_params
     params.require(:request).permit :user_id, :book_title, :book_author,
       :url, :status
@@ -55,5 +50,4 @@ class Admin::RequestsController < ApplicationController
     order(sort_column + " " + sort_direction).
     paginate per_page: 5, page: params[:page]
   end
-
 end

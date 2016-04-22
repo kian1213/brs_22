@@ -1,7 +1,7 @@
 class Request < ActiveRecord::Base
   belongs_to :user
 
-  enum status: {"Approved": true, "Pending": false}
+  enum status: {"approved": true, "pending": false}
 
   validates :book_title, presence: true
   validates :book_author, presence: true

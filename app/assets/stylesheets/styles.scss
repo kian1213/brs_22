@@ -175,3 +175,53 @@ footer ul li {
   margin-left: 38px !important;
   margin-top: 10px !important;
 }
+
+.comment-image {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.comment-area {
+  background-color: #FAEBAB;
+  margin-right: 15px !important;
+  margin-left: 5px !important;
+}
+
+.edit-area {
+  background-color: #DCF0FA !important;
+}
+
+.book-image {
+  background-image: asset-url("bg_product.png");
+  background-repeat: no-repeat;
+  float: left;
+  width: 148px;
+  margin-right: 10px;
+  position: relative;
+  padding-top: 4px;
+  margin-bottom: 20px;
+}
+
+.btn-title {
+  margin-top: 5px;
+  height: 20px !important;
+  text-align: center !important;
+}
+
+.activity {
+  border-bottom: solid 1px #CCC;
+  padding: 16px 0;
+  em {
+    color: #777;
+    font-size: 12px;
+    padding-left: 5px;
+  }
+}
+
+.time-ago {
+  color: cornflowerblue;
+}
+
+.activity-list {
+  margin-left: 50px;
+}

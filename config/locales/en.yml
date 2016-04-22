@@ -52,6 +52,11 @@ en:
       date: Date Published
       page: Total Pages
       review_list: User Reviews
+      need_to: "You need to "
+      sign_in: Sign In
+      or: " or "
+      sign_up: Sign Up
+      post: " to create a Review"
     books:
       title: Book Title
       author: Author
@@ -86,7 +91,9 @@ en:
     index:
       head_content: Welcome to the Framgia BRS
       sub_header: This is a Reviewing System for Technical Books in Framgia.
-      signup: Sign up now!
+      recent: Newly added books
+      books: Books List
+      header_title: My Activities
   layouts:
     error_messages:
       contains: "This form contains "
@@ -96,6 +103,7 @@ en:
     header:
       app_title: Book Reviewing System
       tablink_login: Log In
+      tablink_signup: Create an Account
       tablink_welcome: Welcome
       tablink_profile: My Profile
       tablink_setting: Update my Account
@@ -112,6 +120,12 @@ en:
       title: Book Reviewing System
     admin:
       title: Book Reviewing System -- Admin
+  public_activity:
+    user:
+      create:
+        followed: Followed
+        ago: ago
+        removed: a user which has been removed.
   requests:
     create:
       success: Request successfully created
@@ -184,6 +198,20 @@ en:
       author: Author
       date: Date Published
       page: Total Pages
+    comments:
+      edit: Edit
+      delete: Delete
+      confirm: Are you sure?
+    form_create:
+      post_comment: Post Comment
+      need_to: "You need to "
+      sign_in: Sign In
+      or: " or "
+      sign_up: Sign Up
+      post: " to post a Comment"
+    form_edit:
+      edit_comment: Edit Comment
+      cancel: Cancel
   users:
     registrations:
       edit:
@@ -371,6 +399,7 @@ en:
         status: Request Status
         actions: Actions
         edit: Edit
+        request_by: Request By
         confirm: Are you sure?
         delete: Delete
         approved: Approved

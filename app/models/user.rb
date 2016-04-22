@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  include PublicActivity::Common
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable
   mount_uploader :avatar, AvatarUploader
@@ -8,7 +9,6 @@ class User < ActiveRecord::Base
   has_many :favorites
   has_many :likes
   has_many :comments
-  has_many :activities
   has_many :active_relationships, class_name: Relationship.name,
     foreign_key: :follower_id,
     dependent: :destroy
@@ -45,7 +45,7 @@ class User < ActiveRecord::Base
     following.include? other_user
   end
 
-  def is_not_self? user
-    self != user
+  def is_self? user
+    self == user
   end
 end
