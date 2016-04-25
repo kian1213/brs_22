@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     end
     resources :requests
   end
+  resources :likes
 
   namespace :admin do
     root "users#index"
