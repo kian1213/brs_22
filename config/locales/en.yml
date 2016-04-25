@@ -94,6 +94,7 @@ en:
       recent: Newly added books
       books: Books List
       header_title: My Activities
+      likes: Likes
   layouts:
     error_messages:
       contains: "This form contains "
@@ -120,6 +121,11 @@ en:
       title: Book Reviewing System
     admin:
       title: Book Reviewing System -- Admin
+  likes:
+    create:
+      likes: "Likes: "
+    destroy:
+      likes: "Likes: "
   public_activity:
     user:
       create:
@@ -289,6 +295,12 @@ en:
       full_name: Full Name
       email: Email Address
       admin: Is user an Admin?
+      activites: User Activities
+      likes: "Likes: "
+    form_like:
+      like: Like
+    form_unlike:
+      unlike: Unlike
   admin:
     users:
       create:
