@@ -1,0 +1,12 @@
+<% @comment = Comment.find(activity.trackable_id) %>
+<% @review = Review.find(@comment.review_id) %>
+<%= t ".update_comment" %>
+<% if activity.trackable %>
+  <%= link_to @review.book.title, book_path(@review.book) %>
+  <i class="time-ago">
+    <%= time_ago_in_words activity.created_at %>
+    <%= t ".ago" %>
+  </i>
+<% else %>
+  <%= t ".removed" %>
+<% end %>
