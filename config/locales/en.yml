@@ -289,6 +289,12 @@ en:
       full_name: Full Name
       email: Email Address
       admin: Is user an Admin?
+      activites: User Activities
+      likes: "Likes: "
+    form_like:
+      like: Like
+    form_unlike:
+      unlike: Unlike
   admin:
     users:
       create:
