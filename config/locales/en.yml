@@ -52,6 +52,11 @@ en:
       date: Date Published
       page: Total Pages
       review_list: User Reviews
+      need_to: "You need to "
+      sign_in: Sign In
+      or: " or "
+      sign_up: Sign Up
+      post: " to create a Review"
     books:
       title: Book Title
       author: Author
@@ -86,7 +91,9 @@ en:
     index:
       head_content: Welcome to the Framgia BRS
       sub_header: This is a Reviewing System for Technical Books in Framgia.
-      signup: Sign up now!
+      recent: Newly added books
+      books: Books List
+      header_title: My Activities
   layouts:
     error_messages:
       contains: "This form contains "
@@ -96,6 +103,7 @@ en:
     header:
       app_title: Book Reviewing System
       tablink_login: Log In
+      tablink_signup: Create an Account
       tablink_welcome: Welcome
       tablink_profile: My Profile
       tablink_setting: Update my Account
@@ -112,6 +120,36 @@ en:
       title: Book Reviewing System
     admin:
       title: Book Reviewing System -- Admin
+  public_activity:
+    user:
+      create:
+        followed: followed
+        ago: ago
+        removed: a user which has been removed.
+    favorite:
+      create:
+        marks: marks
+        as_favorite: " as favorite "
+        ago: ago
+        removed: a user which has been removed.
+    review:
+      create:
+        create_review: created a review for
+        ago: ago
+        removed: a book which has been removed.
+      update:
+        update_review: updated the review for
+        ago: ago
+        removed: a review which has been removed.
+    comment:
+      create:
+        create_comment: adds a comment to
+        ago: ago
+        removed: a book which has been removed.
+      update:
+        update_comment: updated the comment for
+        ago: ago
+        removed: a review which has been removed.
   requests:
     create:
       success: Request successfully created
@@ -190,6 +228,11 @@ en:
       confirm: Are you sure?
     form_create:
       post_comment: Post Comment
+      need_to: "You need to "
+      sign_in: Sign In
+      or: " or "
+      sign_up: Sign Up
+      post: " to post a Comment"
     form_edit:
       edit_comment: Edit Comment
       cancel: Cancel

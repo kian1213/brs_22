@@ -1,4 +1,6 @@
 class UserBooksController < ApplicationController
+  before_action :authenticate_user!
+
   def create
     @user_book = UserBook.new user_book_params
 

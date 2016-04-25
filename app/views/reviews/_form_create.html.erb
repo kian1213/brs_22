@@ -7,6 +7,14 @@
     <%= f.text_area :content, class: "form-control",
       id: "comment-text-area", rows: 5 %>
     <br>
-    <%= f.submit class: "btn btn-primary" %>
+    <% if user_signed_in? %>
+      <%= f.submit class: "btn btn-primary" %>
+    <% else %>
+      <%= t ".need_to" %>
+      <%= link_to t(".sign_in"), new_user_session_path %>
+      <%= t ".or" %>
+      <%= link_to t(".signup"), new_user_registration_path %>
+      <%= t ".post" %>
+    <% end %>
   <% end %>
 </div>

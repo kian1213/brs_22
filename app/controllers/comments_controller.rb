@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
 
   def create
     if @comment.save comment_params
+      @comment.create_activity :create, owner: current_user
       @review = Review.find params[:review_id]
       respond_to do |format|
         format.html {redirect_to user_review_path(params[:user_id], params[:review_id])}
@@ -15,6 +16,7 @@ class CommentsController < ApplicationController
 
   def update
     if @comment.update_attributes comment_params
+      @comment.create_activity :update, owner: current_user
       @review = Review.find params[:review_id]
       respond_to do |format|
         format.html {redirect_to user_review_path(params[:user_id], params[:review_id])}

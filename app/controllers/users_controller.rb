@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     @users = @users.search(params[:search]).
       order(sort_column + " " + sort_direction).
       paginate per_page: 5, page: params[:page]
+
   end
 
   def sort_column

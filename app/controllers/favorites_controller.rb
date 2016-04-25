@@ -3,6 +3,7 @@ class FavoritesController < ApplicationController
     @favorite = Favorite.new favorite_params
 
     if @favorite.save
+      @favorite.create_activity :create, owner: current_user
       redirect_to books_path
       flash[:success] = t ".success"
     else

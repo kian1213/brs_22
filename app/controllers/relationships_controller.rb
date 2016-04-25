@@ -19,6 +19,7 @@ class RelationshipsController < ApplicationController
   def create
     @user = User.find params[:followed_id]
     current_user.follow @user
+    @user.create_activity :create, owner: current_user
     redirect_to users_path
   end
 

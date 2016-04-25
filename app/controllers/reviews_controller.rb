@@ -1,5 +1,4 @@
 class ReviewsController < ApplicationController
-  before_action :authenticate_user!
   load_and_authorize_resource
   before_action :set_rate_descriptions
   before_action :load_reviews, only: [:index]
@@ -8,6 +7,7 @@ class ReviewsController < ApplicationController
   def create
     if @review.save review_params
       redirect_to user_reviews_path(current_user)
+      @review.create_activity :create, owner: current_user
       flash[:success] = t ".success"
     else
       render :new
@@ -19,6 +19,7 @@ class ReviewsController < ApplicationController
 
     if @review.update_attributes review_params
       redirect_to user_reviews_path(current_user)
+      @review.create_activity :update, owner: current_user
       flash[:success] = t ".success"
     else
       render :edit
