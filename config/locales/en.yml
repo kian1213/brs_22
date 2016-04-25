@@ -123,9 +123,33 @@ en:
   public_activity:
     user:
       create:
-        followed: Followed
+        followed: followed
         ago: ago
         removed: a user which has been removed.
+    favorite:
+      create:
+        marks: marks
+        as_favorite: " as favorite "
+        ago: ago
+        removed: a user which has been removed.
+    review:
+      create:
+        create_review: created a review for
+        ago: ago
+        removed: a book which has been removed.
+      update:
+        update_review: updated the review for
+        ago: ago
+        removed: a review which has been removed.
+    comment:
+      create:
+        create_comment: adds a comment to
+        ago: ago
+        removed: a book which has been removed.
+      update:
+        update_comment: updated the comment for
+        ago: ago
+        removed: a review which has been removed.
   requests:
     create:
       success: Request successfully created
