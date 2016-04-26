@@ -1,17 +1,49 @@
-<div class="panel panel-success">
-  <div class="panel-heading panel-colors">
-    <h3><%= t ".title" %></h3>
+<div class="row">
+  <div class="panel panel-success">
+    <div class="panel-heading panel-colors">
+      <h3><%= t ".title" %></h3>
+    </div>
+    <div class="panel-body">
+      <div class="col-md-12">
+        <h4><b><%= t ".full_name" %></b></h4>
+        &nbsp;&nbsp;<%= @user.full_name %>
+        <br>
+        <h4><b><%= t ".email" %></b></h4>
+        &nbsp;&nbsp;<%= @user.email %>
+        <br>
+        <h4><b><%= t ".admin" %></b></h4>
+        &nbsp;&nbsp;<%= @user.admin? %>
+      </div>
+    </div>
   </div>
-  <div class="panel-body">
-    <div class="col-md-12">
-      <h4><b><%= t ".full_name" %></b></h4>
-      &nbsp;&nbsp;<%= @user.full_name %>
-      <br>
-      <h4><b><%= t ".email" %></b></h4>
-      &nbsp;&nbsp;<%= @user.email %>
-      <br>
-      <h4><b><%= t ".admin" %></b></h4>
-      &nbsp;&nbsp;<%= @user.admin? %>
+</div>
+<div class="row">
+  <div class="panel panel-success">
+    <div class="panel-heading panel-colors">
+      <h3><%= t ".activites" %></h3>
+    </div>
+    <div class="activity-list">
+      <% @activities.each do |activity| %>
+        <div class="activity">
+          <%= link_to activity.owner.full_name,
+            activity.owner if activity.owner %>
+          <%= render_activity activity %>
+          <br>
+          <small>
+            <div id="like-unlike-<%= activity.id %>">
+              <% if Like.check_if_included? activity.id, current_user.id %>
+                <%= render "form_unlike", activity_id: activity %>
+              <% else %>
+                <%= render "form_like", activity_id: activity.id %>
+              <% end %>
+            </div>
+            <div id="likes-count-<%= activity.id %>">
+              <%= t ".likes" %>
+              <%= activity.likes.count %>
+            </div>
+          </small>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
